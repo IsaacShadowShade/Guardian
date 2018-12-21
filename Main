@@ -1,0 +1,97 @@
+#--------------------------IMPORTS--------------------------------------
+
+import random
+import time
+
+#--------------------------VARIABLES------------------------------------
+
+Names = ["Bob", "Rebecca", "Cheyenne", "Aiden", "Kassy", "Isaac", "Rob", "Dob", "Cob", "Frella", "Bella", "Ella", "Donella", "Jack", "Gina", "Bryce", "Ben", "Journal", "Jordan", "Felicia", "Sophie", "Nira", "Elizabeth", "Lauren", "James", "Mateo", "Romy", 'Kris', 'Kade', 'Stephanie', 'Brianna', 'Marina', 'Alex', "Matthew", "Etta", "Nick", "Paige", "Annaliese", "Hermie", "Rufus"]
+
+Towns = ["Heramy", "Joan's Creek", "Herpes Haven", "Why", "Serupa", "Burlee", "New Trunken", "Umpra", "Kumquep", "ASDFGHJKL", "Loopa of the Hoopa", "Christmas Town", "Town of Yellow", "Province of Love", "Treens of Sherp", "Village of Burn", "Philburton", "Rivers of Shrewt", "West Krumptan", "Unicorn Cove", "Hula Moula", "Isle of the Leonaide", "Troy", "Helm's Gate", "Haram's Point", "Skezafrenza's Craig", "Valley of Toto", "New Juraan", "Ya'at'eeh Creek", "Mwanafunzi Run", "Wee Town"]
+
+Rulers = ["AI#73521", "Philburt", "Mr. Denker", "Daddy Denker", "Pho King the Devious", "Trellean", "Ooper of the Dooper", "QWERTYUIOP", "AIDS", "Leo", "Arcturus the Filthy", "Arcturus the Adventerous", "Arcturus the Multi-Personalatied", "Arcturus the Kind", "Arcturus the Paralyzed", "Queen Franky", "Mr. President", "Poleyena", "AI#17632", "Helapho", "Empra, the Empress", "Shurum the Shaman", "Jarquanzela the Admired", "Jared the Simple", "Spint the Greedy", "Queen Elizabeth"]
+
+MainRuler = random.choice(Rulers)
+
+Jobs = ['Stonemason', 'Manager', 'Clothing Designer', 'Soldier', 'Doctor', 'Biologist', 'Space Psychologist', 'Firework Designer', 'Snake Milker', 'Scatologist', 'Laughter Therapist', 'Fashion Model', 'Cashier', 'Professional Cuddler', "Fortune Cookie Writer", 'Professional Mourner', 'Dog Surfing Instructor', "Professional Toilet Plungerer", "CEO of Zumba", ("Uncle's brother's dentist's toothbrush of " + MainRuler), ("Advisor for " + MainRuler), ("Servant for " + MainRuler) ]
+
+adjectives = ['red', 'quaint', 'holy', 'small', 'gargantuan', 'smelly', 'crispy', 'verdant', "floppy", "fabulous", "vibrant", "squishy", "mellow", "purple", "peaceful", "moist", "dank", "tall", "great", "concieted", "corrupt", "magnificent", 'spicy', 'lazy', 'xenophobic']
+
+evil_cities = ["Mordor", "Vhindlhaven", "Shadow's Gate", "The River of Dark Waters", "Florida", "Eurin's Fault", "The Upside Down", "Nightdale", "Tall Mountains Craig", "Bharad Dur", "Vhala Umara", "Hades", "Waffleland"]
+
+MainName = random.choice(Names)
+Hometown = random.choice(Towns)
+ParentsJob = random.choice(Jobs)
+ParentsName = random.choice(Names)
+Chance = 0
+x = True
+
+#--------------------------DEFINITIONS----------------------------------
+
+def certainchance(a):
+  global Chance 
+  Chance = random.randint(1,a)
+  if Chance == a:
+    return True
+  else:
+    return False
+def userchance(a):
+  global Chance
+  Chance = random.randint(1, len(a) / 2)
+  if Chance == len(a) / 2:
+    return True
+  else:
+    return False
+
+#--------------------------CODE-----------------------------------------
+
+print "A new journey is started on the road called life. It has many bumps, ditches, and scenery but we all travel along it. Today, " + MainName + " will be traveling with you as you are their guide today."
+
+while x == True:
+  if certainchance(4) == False:
+    # Good Kingdom Start
+    print """
+    Our story begins in the """ + random.choice(adjectives) + " " + Hometown + ", ruled by the one and only " + MainRuler + ". Here is the first time you will decide " + MainName + "'s future."
+
+    influence = raw_input("Send a short message to the heavens praying for " + MainName + "'s life. (At least 2 characters) ")
+    if userchance(influence) == True:
+      print MainName + "'s life is an average one. Living with a single parent named " + ParentsName + " who works as a " + ParentsJob + ", they've cared for little " + MainName + " for awhile now. However, they've failed to notice the bullying they continually face and you must put a stop to it."
+      abandoned = False
+    else:
+      print "Poor little " + MainName + " was abandoned at birth because of how " + random.choice(adjectives) + " they were."
+      abandoned = True
+    #                   King Scenario Below, correct the chance later to 70-80
+      if certainchance(80) == True:
+        print "However, they went to an orphanage just as " + MainRuler + " was looking for a child. " + MainRuler + " requested a child and found " + MainName + " suitable for them. " + MainName + " just got adopted by the ruler!"
+        adoptedbyking = True
+
+    if abandoned == False:
+      time.sleep(3)
+      print ' '
+      print MainName + " is miserable and prays to whatever guardian they have to protect them will help. That's you. Do your job you " + random.choice(adjectives) + """ guardian! You can help them by telling them what to do. You can:
+      1.) Tell them to confront the bully
+      2.) Tell them to tell a teacher
+      3.) Tell them to avoid the bully by moving to another area
+      4.) Fight the bully yourself
+      5.) Abandon """ + MainName + " and get a completely new kid. "
+      influence = raw_input
+      Bully = random.choice(Names)
+      if influence == "1":
+        print MainName + " walks up to the Bully named " +  Bully + " and "
+      elif influence == "2":
+        pass
+      elif influence == "3":
+        pass
+      elif influence == "4":
+        pass
+      elif influence == "5":
+        pass
+  else:
+    pass
+  #   Bad Kingdom Scenario
+#--------------------------CREDITS--------------------------------------
+
+#Made by:
+#         Aiden Tabrah, Cheyenne Huggins, and Kassandra Wiersma
+# Aiden Tabrah: Good Kingdom
+# Kassandra Wiersma: Bad Kingdom
